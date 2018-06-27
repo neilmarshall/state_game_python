@@ -9,10 +9,15 @@ import random
 class Game():
 
     def __init__(self):
-        """Class constructor - reads states into a deque"""
-        with open("states.txt") as states:
-            self.state_list = [state.strip() for state in states]
-        random.shuffle(self.state_list)
+        """Class constructor - reads states into a list"""
+        self.state_list = Game.load_data("states.txt")
+
+    @staticmethod
+    def load_data(fpath):
+        with open(fpath) as states:
+            state_list = [state.strip() for state in states]
+        random.shuffle(state_list)
+        return state_list
 
     def run(self):
         """
