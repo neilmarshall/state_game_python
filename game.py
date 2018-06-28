@@ -8,9 +8,9 @@ import random
 
 class Game():
 
-    def __init__(self):
+    def __init__(self, fpath):
         """Class constructor - reads states into a list"""
-        self.state_list = Game.load_data("states.txt")
+        self.state_list = Game.load_data(fpath)
 
     @staticmethod
     def load_data(fpath):
