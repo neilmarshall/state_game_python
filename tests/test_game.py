@@ -6,8 +6,8 @@ from game import Game
 class TestGameWithMockData(unittest.TestCase):
 
     @mock.patch.object(Game, "load_data")
-    def setUp(self):
-        patch.return_value = ['Iowa', 'Ohio', 'Utah']
+    def setUp(self, game_patch):
+        game_patch.return_value = ['Iowa', 'Ohio', 'Utah']
         self.game = Game()
         
     def test_class_instantiation(self):
